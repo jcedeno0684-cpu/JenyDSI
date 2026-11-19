@@ -1,0 +1,342 @@
+/* ==========================================================================
+   DESIGN SYSTEM - SISTEMA DE CONTROL DE RESCATE Y ADOPCIÓN ANIMAL
+   Actividad #5: Librería de Componentes UI (CSS3 Puro)
+   ========================================================================== */
+
+/* 1. CONFIGURACIÓN DEL DESIGN SYSTEM: Variables Corporativas (:root) */
+:root {
+  /* Paleta de colores corporativa */
+  --color-primary: #1b6ca8;         /* Azul institucional de confianza y rescate */
+  --color-primary-dark: #14507d;    /* Estado hover primario */
+  --color-secondary: #2e8b57;       /* Verde bienestar y adopción */
+  --color-secondary-dark: #226b42;  /* Estado hover secundario */
+  
+  /* Colores semánticos de estado y urgencia */
+  --color-success: #198754;
+  --color-success-bg: #d1e7dd;
+  --color-warning: #b45309;
+  --color-warning-bg: #fef3c7;
+  --color-danger: #dc2626;
+  --color-danger-dark: #b91c1c;
+  --color-danger-bg: #fee2e2;
+
+  /* Neutrales y superficies */
+  --color-bg: #f4f7f9;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-border: #d1d5db;
+
+  /* Tipografía base y espaciados */
+  --font-base: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-focus: 0 0 0 3px rgba(27, 108, 168, 0.25);
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* Regla general del modelo de cajas alternativo */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Contenedor principal de demostración */
+.ui-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.ui-header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.ui-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.85rem;
+}
+
+.ui-header p {
+  margin: 0;
+  opacity: 0.92;
+}
+
+.ui-section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow-card);
+}
+
+.ui-section h2 {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-bg);
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.component-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.code-tag {
+  display: inline-block;
+  background-color: #eef2f6;
+  color: #334155;
+  font-family: Consolas, monospace;
+  font-size: 0.85rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   2. COMPONENTE: BOTONES (.btn)
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.65rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform 0.1s ease, box-shadow var(--transition-fast);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Botón Primario */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+/* Botón de Peligro */
+.btn-danger {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: var(--color-danger-dark);
+}
+
+.btn-danger:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+}
+
+/* ==========================================================================
+   3. COMPONENTE: FORMULARIOS (.form-group, .form-control, .form-select)
+   ========================================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.form-control,
+.form-select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+/* ==========================================================================
+   4. COMPONENTE: TARJETAS (.card)
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.card-body {
+  padding: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-body p {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.95rem;
+}
+
+.card-footer {
+  padding: 0.9rem 1.25rem;
+  background-color: #f8fafc;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   5. COMPONENTE: ALERTAS / ETIQUETAS DE ESTADO (.badge)
+   ========================================================================== */
+.badge {
+  display: inline-block;
+  padding: 0.28rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+}
+
+/* Urgencia Alta / Peligro */
+.badge-alta {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid #fca5a5;
+}
+
+/* Urgencia Media / En Terapia */
+.badge-media {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+  border: 1px solid #fcd34d;
+}
+
+/* Urgencia Baja / Apto para Adopción */
+.badge-baja {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid #86efac;
+}
+
+/* Muestra visual de paleta de colores en catálogo */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.swatch {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.swatch-color {
+  height: 55px;
+}
+
+.swatch-info {
+  padding: 0.6rem;
+  background: #ffffff;
+}

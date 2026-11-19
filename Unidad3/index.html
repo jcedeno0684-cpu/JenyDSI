@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System UI Kit - Sistema de Rescate y Adopción Animal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ui-container">
+    <!-- Encabezado institucional del Design System -->
+    <header class="ui-header">
+      <h1>Design System &amp; Librería de Componentes UI</h1>
+      <p>Sistema de Control de Rescate y Adopción Animal — Guía Visual y Patrones CSS3</p>
+    </header>
+
+    <main>
+      <!-- SECCIÓN 1: PALETA DE COLORES (:root) -->
+      <section class="ui-section">
+        <h2>1. Paleta de Colores Corporativa (:root)</h2>
+        <p>Variables globales definidas en CSS3 para mantener consistencia visual en todo el sistema:</p>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-primary);"></div>
+            <div class="swatch-info">
+              <strong>Primario</strong><br>
+              <span class="code-tag">--color-primary</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-secondary);"></div>
+            <div class="swatch-info">
+              <strong>Secundario</strong><br>
+              <span class="code-tag">--color-secondary</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-success);"></div>
+            <div class="swatch-info">
+              <strong>Éxito / Baja</strong><br>
+              <span class="code-tag">--color-success</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-warning);"></div>
+            <div class="swatch-info">
+              <strong>Advertencia / Media</strong><br>
+              <span class="code-tag">--color-warning</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-danger);"></div>
+            <div class="swatch-info">
+              <strong>Peligro / Alta</strong><br>
+              <span class="code-tag">--color-danger</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: BOTONES -->
+      <section class="ui-section">
+        <h2>2. Botones e Interacción (:hover y :focus)</h2>
+        <p>Botones reutilizables con transiciones suaves y anillo de enfoque accesible:</p>
+        <div class="component-row">
+          <div>
+            <button type="button" class="btn btn-primary">Registrar Rescate</button><br>
+            <span class="code-tag">.btn .btn-primary</span>
+          </div>
+          <div>
+            <button type="button" class="btn btn-secondary">Aprobar Adopción</button><br>
+            <span class="code-tag">.btn .btn-secondary</span>
+          </div>
+          <div>
+            <button type="button" class="btn btn-danger">Cancelar / Eliminar</button><br>
+            <span class="code-tag">.btn .btn-danger</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: FORMULARIOS -->
+      <section class="ui-section">
+        <h2>3. Controles de Formulario</h2>
+        <p>Campos de texto y selectores con padding uniforme, bordes definidos y sombra al enfocar:</p>
+        <form action="#" method="post" class="form-grid">
+          <div class="form-group">
+            <label for="ubicacion" class="form-label">Ubicación del Rescate</label>
+            <input type="text" id="ubicacion" name="ubicacion" class="form-control" placeholder="Ej. Av. Manabí y Calle 10">
+            <span class="code-tag">.form-control</span>
+          </div>
+          <div class="form-group">
+            <label for="especie" class="form-label">Categoría de Especie</label>
+            <select id="especie" name="especie" class="form-select">
+              <option value="">Seleccione una especie...</option>
+              <option value="perro">Perro (Canino)</option>
+              <option value="gato">Gato (Felino)</option>
+              <option value="silvestre">Fauna Silvestre</option>
+            </select>
+            <span class="code-tag">.form-select</span>
+          </div>
+        </form>
+      </section>
+
+      <!-- SECCIÓN 4: ALERTAS / BADGES -->
+      <section class="ui-section">
+        <h2>4. Alertas y Etiquetas de Urgencia (Badges)</h2>
+        <p>Indicadores visuales rápidos para clasificar la prioridad de atención veterinaria o estado:</p>
+        <div class="component-row">
+          <div>
+            <span class="badge badge-alta">Urgencia Alta — Crítico</span><br>
+            <span class="code-tag">.badge .badge-alta</span>
+          </div>
+          <div>
+            <span class="badge badge-media">Urgencia Media — En Terapia</span><br>
+            <span class="code-tag">.badge .badge-media</span>
+          </div>
+          <div>
+            <span class="badge badge-baja">Urgencia Baja — Apto Adopción</span><br>
+            <span class="code-tag">.badge .badge-baja</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: TARJETAS (CARDS) -->
+      <section class="ui-section">
+        <h2>5. Tarjetas de Expediente Animal (Cards)</h2>
+        <p>Contenedores modulares con sombras suaves y bordes redondeados para fichas de animales:</p>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-header">
+              <h3 class="card-title">Caso #001 — Luna</h3>
+              <span class="badge badge-baja">Apto Adopción</span>
+            </div>
+            <div class="card-body">
+              <p><strong>Especie:</strong> Perro (Mestizo)</p>
+              <p><strong>Ubicación:</strong> Parque Central, Chone</p>
+              <p><strong>Estado Médico:</strong> Vacunada, desparasitada y esterilizada.</p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-secondary">Postular Adopción</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <h3 class="card-title">Caso #002 — Michi</h3>
+              <span class="badge badge-media">En Terapia</span>
+            </div>
+            <div class="card-body">
+              <p><strong>Especie:</strong> Gato (Doméstico)</p>
+              <p><strong>Ubicación:</strong> Barrio Santa Martha</p>
+              <p><strong>Estado Médico:</strong> En observación veterinaria por deshidratación leve.</p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-primary">Ver Expediente</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <h3 class="card-title">Caso #003 — Zarigüeya</h3>
+              <span class="badge badge-alta">Urgencia Alta</span>
+            </div>
+            <div class="card-body">
+              <p><strong>Especie:</strong> Fauna Silvestre</p>
+              <p><strong>Ubicación:</strong> Vía Chone - Flavio Alfaro</p>
+              <p><strong>Estado Médico:</strong> Requiere permiso ambiental y atención inmediata.</p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-danger">Asignar Rescatista</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
